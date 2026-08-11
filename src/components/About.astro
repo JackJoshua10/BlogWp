@@ -1,0 +1,17 @@
+---
+import { profile } from "../data/cv";
+---
+
+<section id="sobre-mi" class="mx-auto max-w-5xl px-6 py-16">
+  <h2 class="text-sm font-semibold uppercase tracking-widest text-brand">Sobre mí</h2>
+  <ul class="mt-6 grid gap-3 sm:grid-cols-2">
+    {
+      profile.summary.map((line) => (
+        <li class="flex gap-3 rounded-lg border border-white/5 bg-white/[0.02] p-4 text-sm text-slate-300">
+          <span class="mt-1 text-brand">▹</span>
+          <span>{line}</span>
+        </li>
+      ))
+    }
+  </ul>
+</section>

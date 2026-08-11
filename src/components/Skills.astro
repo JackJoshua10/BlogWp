@@ -1,0 +1,25 @@
+---
+import { skills } from "../data/cv";
+
+const entries = Object.entries(skills);
+---
+
+<section id="habilidades" class="mx-auto max-w-5xl px-6 py-16">
+  <h2 class="text-sm font-semibold uppercase tracking-widest text-brand">Habilidades técnicas</h2>
+  <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    {
+      entries.map(([category, items]) => (
+        <div class="rounded-xl border border-white/5 bg-white/[0.02] p-5">
+          <h3 class="text-sm font-semibold text-slate-100">{category}</h3>
+          <div class="mt-3 flex flex-wrap gap-2">
+            {items.map((item) => (
+              <span class="rounded-full border border-brand/20 bg-brand/5 px-3 py-1 text-xs text-brand">
+                {item}
+              </span>
+            ))}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>

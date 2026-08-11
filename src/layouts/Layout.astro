@@ -1,0 +1,29 @@
+---
+import "../styles/global.css";
+import { profile } from "../data/cv";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = `${profile.name} · ${profile.tagline}`,
+  description = profile.summary[0],
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="bg-ink text-slate-200 font-sans antialiased selection:bg-brand/30">
+    <slot />
+  </body>
+</html>

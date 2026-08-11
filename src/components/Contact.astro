@@ -1,0 +1,32 @@
+---
+import { profile } from "../data/cv";
+
+const links = [
+  { label: "Email", value: profile.email, href: `mailto:${profile.email}` },
+  { label: "Teléfono", value: profile.phone, href: `tel:+51${profile.phone}` },
+  { label: "LinkedIn", value: "jack-joshua-sivipaucar-quilluya", href: profile.linkedin },
+  { label: "GitHub", value: "JackJoshua10", href: profile.github },
+];
+---
+
+<section id="contacto" class="mx-auto max-w-5xl px-6 py-16">
+  <h2 class="text-sm font-semibold uppercase tracking-widest text-brand">Contacto</h2>
+  <p class="mt-4 max-w-xl text-slate-400">
+    ¿Tienes un proyecto o una oportunidad? Escríbeme, respondo rápido.
+  </p>
+  <div class="mt-6 grid gap-4 sm:grid-cols-2">
+    {
+      links.map((link) => (
+        <a
+          href={link.href}
+          target={link.href.startsWith("http") ? "_blank" : undefined}
+          rel="noopener noreferrer"
+          class="flex items-center justify-between rounded-xl border border-white/5 bg-white/[0.02] p-4 transition hover:border-brand/30"
+        >
+          <span class="text-sm text-slate-500">{link.label}</span>
+          <span class="text-sm font-medium text-slate-200">{link.value}</span>
+        </a>
+      ))
+    }
+  </div>
+</section>
