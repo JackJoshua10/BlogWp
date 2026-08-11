@@ -26,3 +26,6 @@ pnpm-debug.log*
 # raw source files (already copied into public/)
 /CV_JackSivipaucarQ - 2026.pdf
 /foto-cv.jfif
+
+.vercel
+.env*

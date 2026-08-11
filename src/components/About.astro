@@ -2,12 +2,15 @@
 import { profile } from "../data/cv";
 ---
 
-<section id="sobre-mi" class="mx-auto max-w-5xl px-6 py-16">
-  <h2 class="text-sm font-semibold uppercase tracking-widest text-brand">Sobre mí</h2>
+<section id="sobre-mi" class="relative z-10 mx-auto max-w-5xl px-6 py-16">
+  <h2 class="reveal text-sm font-semibold uppercase tracking-widest text-brand">Sobre mí</h2>
   <ul class="mt-6 grid gap-3 sm:grid-cols-2">
     {
-      profile.summary.map((line) => (
-        <li class="flex gap-3 rounded-lg border border-white/5 bg-white/[0.02] p-4 text-sm text-slate-300">
+      profile.summary.map((line, i) => (
+        <li
+          class="reveal flex gap-3 rounded-lg border border-slate-200 bg-slate-50 p-4 text-sm text-slate-600 hover:border-brand/30 dark:border-white/5 dark:bg-white/[0.02] dark:text-slate-300"
+          style={`transition-delay: ${i * 60}ms`}
+        >
           <span class="mt-1 text-brand">▹</span>
           <span>{line}</span>
         </li>

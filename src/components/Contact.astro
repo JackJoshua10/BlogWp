@@ -9,22 +9,23 @@ const links = [
 ];
 ---
 
-<section id="contacto" class="mx-auto max-w-5xl px-6 py-16">
-  <h2 class="text-sm font-semibold uppercase tracking-widest text-brand">Contacto</h2>
-  <p class="mt-4 max-w-xl text-slate-400">
+<section id="contacto" class="relative z-10 mx-auto max-w-5xl px-6 py-16">
+  <h2 class="reveal text-sm font-semibold uppercase tracking-widest text-brand">Contacto</h2>
+  <p class="reveal mt-4 max-w-xl text-slate-500 dark:text-slate-400">
     ¿Tienes un proyecto o una oportunidad? Escríbeme, respondo rápido.
   </p>
   <div class="mt-6 grid gap-4 sm:grid-cols-2">
     {
-      links.map((link) => (
+      links.map((link, i) => (
         <a
           href={link.href}
           target={link.href.startsWith("http") ? "_blank" : undefined}
           rel="noopener noreferrer"
-          class="flex items-center justify-between rounded-xl border border-white/5 bg-white/[0.02] p-4 transition hover:border-brand/30"
+          class="reveal flex items-center justify-between rounded-xl border border-slate-200 bg-slate-50 p-4 hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-lg hover:shadow-brand/10 dark:border-white/5 dark:bg-white/[0.02]"
+          style={`transition-delay: ${i * 70}ms`}
         >
           <span class="text-sm text-slate-500">{link.label}</span>
-          <span class="text-sm font-medium text-slate-200">{link.value}</span>
+          <span class="text-sm font-medium text-slate-800 dark:text-slate-200">{link.value}</span>
         </a>
       ))
     }
