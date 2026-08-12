@@ -1,17 +1,26 @@
 ---
 import { projects } from "../data/cv";
+import SectionHeading from "./SectionHeading.astro";
 ---
 
-<section id="proyectos" class="relative z-10 mx-auto max-w-5xl px-6 py-16">
-  <h2 class="reveal text-sm font-semibold uppercase tracking-widest text-brand">Proyectos</h2>
-  <div class="mt-6 grid gap-6 sm:grid-cols-2">
+<section id="proyectos" class="relative z-10 mx-auto max-w-5xl px-6 py-20 sm:py-24">
+  <SectionHeading index="02" title="Proyectos" subtitle="Trabajo entregado para clientes y proyectos propios" />
+
+  <div class="grid gap-6 sm:grid-cols-2">
     {
       projects.map((project, i) => (
         <article
-          class="reveal group flex flex-col rounded-xl border border-slate-200 bg-slate-50 p-6 hover:-translate-y-1 hover:border-brand/40 hover:shadow-xl hover:shadow-brand/10 dark:border-white/5 dark:bg-white/[0.02]"
+          class="reveal group relative flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 p-6 hover:-translate-y-1 hover:border-brand/40 hover:shadow-xl hover:shadow-brand/10 dark:border-white/10 dark:bg-white/[0.03]"
           style={`transition-delay: ${i * 70}ms`}
         >
-          <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100">{project.title}</h3>
+          <div class="absolute inset-x-0 top-0 h-0.5 origin-left scale-x-0 bg-gradient-to-r from-brand to-fuchsia-400 transition-transform duration-300 group-hover:scale-x-100" />
+
+          <div class="flex items-start justify-between gap-3">
+            <h3 class="text-lg font-semibold text-slate-900 dark:text-slate-100">{project.title}</h3>
+            <span class="shrink-0 font-mono text-xs text-slate-300 dark:text-white/10">
+              {String(i + 1).padStart(2, "0")}
+            </span>
+          </div>
           <p class="mt-2 flex-1 text-sm text-slate-500 dark:text-slate-400">{project.description}</p>
           {project.highlight && (
             <p class="mt-3 text-xs font-medium text-brand">{project.highlight}</p>

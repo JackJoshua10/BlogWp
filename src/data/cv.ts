@@ -131,3 +131,35 @@ export const projects = [
     tags: ["PHP", "MySQL", "MVC", "Scrum"],
   },
 ];
+
+const skillCount = Object.values(skills).reduce((total, items) => total + items.length, 0);
+
+export const stats = [
+  { value: "2+", label: "Años de experiencia" },
+  { value: `${projects.length}`, label: "Proyectos entregados" },
+  { value: `${skillCount}+`, label: "Tecnologías y herramientas" },
+  { value: "5", label: "Empresas / proyectos con clientes" },
+];
+
+export const capabilities = [
+  {
+    title: "Frontend con React & Tailwind",
+    description: "Interfaces ágiles e intuitivas con JavaScript, React y Tailwind CSS.",
+    icon: "code",
+  },
+  {
+    title: "Integraciones con Odoo (ERP)",
+    description: "Conecto la web con el CRM/ERP para gestionar productos y procesos.",
+    icon: "cube",
+  },
+  {
+    title: "Productividad con IA (Claude)",
+    description: "Uso IA en el flujo de desarrollo para reducir deuda técnica.",
+    icon: "sparkles",
+  },
+  {
+    title: "Ágil: Scrum, Git/GitHub",
+    description: "Documentación técnica, diagramación de procesos y control de versiones.",
+    icon: "cycle",
+  },
+];
